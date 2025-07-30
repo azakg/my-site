@@ -1,46 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Видео фон</title>
+  <title>Видео фон + Scroll</title>
   <style>
-    body, html {
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
       height: 100%;
+      font-family: sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    .section {
+      position: relative;
+      height: 100vh;
       overflow: hidden;
     }
 
-    #bgVideo {
-      position: fixed;
+    .video-bg {
+      position: absolute;
       top: 0;
       left: 0;
-      min-width: 100%;
-      min-height: 100%;
-      z-index: -1;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
+      z-index: 0;
     }
 
     .content {
       position: relative;
       z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start; /* выравнивание сверху */
+      align-items: center;
+      padding-top: 20vh; /* поднимаем блок выше */
       color: white;
-      text-align: center;
-      padding-top: 30vh;
+      text-shadow: 0 0 10px black;
+      font-size: 1em;
+    }
+
+    .welcome-text {
+      font-size: 3em;
+      margin-bottom: 40px;
+    }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      font-size: 1.5em;
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .second-section {
+      height: 100vh;
+      background: url("ik.jpg") no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
       font-size: 2em;
     }
   </style>
 </head>
 <body>
 
-<video autoplay muted loop id="bgVideo">
-  <source src="vecteezy_hello-neon-light-title-animation-on-wall-great-for_23960299.mp4" type="video/mp4">
-  Your browser does not support HTML5 video.
-</video>
+<!-- Первая секция с видео -->
+<section class="section">
+  <video class="video-bg" autoplay muted loop>
+    <source src="vecteezy_hello-neon-light-title-animation-on-wall-great-for_23960299.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="content">
+    <div class="welcome-text">Welcome to my website!</div>
+    <div class="scroll-down">⬇ Scroll Down ⬇</div>
+  </div>
+</section>
 
-<div class="content">
-  Добро пожаловать!
-</div>
+<!-- Вторая секция -->
+<section class="second-section">
+  Hi, my name is Azamat! <br> 
+  I'm cloud engineer and this is my personal website. <br>
+  Here you can find information about my projects, skills, and experience. Feel free to explore!<br>
+  My contact: <br>
+  p: +1216-301-3034<br>
+  e: azakgzuu@gmail.com<br>  
+</section>
 
 </body>
 </html>
