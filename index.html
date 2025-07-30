@@ -1,39 +1,46 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Азамат Апсаматов</title>
+  <title>Видео фон</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      color: #333;
-      padding: 40px;
-      max-width: 700px;
-      margin: auto;
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
     }
-    h1 {
-      color: #0077cc;
+
+    #bgVideo {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
     }
-    a {
-      color: #0077cc;
+
+    .content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      padding-top: 30vh;
+      font-size: 2em;
     }
   </style>
 </head>
 <body>
-  <h1>Привет! Меня зовут Азамат Апсаматов</h1>
-  <p>Я IT-специалист, интересуюсь DevOps, Kubernetes, облачными технологиями и веб-разработкой. У меня также есть опыт в телекоммуникациях и сетевой инженерии.</p>
 
-  <p>Сейчас я учусь в США и развиваюсь в сфере DevOps и облаков, готовлюсь к получению сертификатов и ищу работу в области системной инженерии и DevOps.</p>
+<video autoplay muted loop id="bgVideo">
+  <source src="vecteezy_hello-neon-light-title-animation-on-wall-great-for_23960299.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
 
-  <h2>Контакты</h2>
-  <ul>
-    <li>Email: azamat@example.com</li>
-    <li>GitHub: <a href="https://github.com/azakg" target="_blank">github.com/azakg</a></li>
-    <li>LinkedIn: <a href="https://linkedin.com/in/azamat-apsamatov" target="_blank">linkedin.com/in/azamat-apsamatov</a></li>
-  </ul>
-<h2>Test text</h2>
-<img id="myImage" src="Lamp Click GIF.gif" style="width:100px">
+<div class="content">
+  Добро пожаловать!
+</div>
+
 </body>
 </html>
-
