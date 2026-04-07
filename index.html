@@ -1,180 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Azamat Apsamatov — Portfolio</title>
-  <meta name="description" content="DevOps / SRE portfolio of Azamat Apsamatov — Kubernetes, AWS, Terraform, CI/CD, Linux." />
-  <!-- Tailwind via CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Subtle animated grid background */
-    .bg-grid:before{
-      content:"";
-      position:absolute; inset:0;
-      background:
-        linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px) 0 0/36px 36px,
-        linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px) 0 0/36px 36px;
-      mask-image: radial-gradient(70% 50% at 50% 20%, black 40%, transparent 100%);
-      pointer-events:none;
-    }
-  </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-X90MRZBM8H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-X90MRZBM8H');
-</script>
-
-</head>
-<body class="relative min-h-screen bg-gradient-to-br from-gray-900 via-indigo-900 to-slate-800 text-gray-100">
-  <!-- Decorative grid -->
-  <div class="bg-grid absolute inset-0"></div>
-
-  <!-- Header / Hero -->
-  <header class="relative max-w-5xl mx-auto px-6 pt-16 pb-10 text-center">
-    <span class="inline-block px-3 py-1 text-sm rounded-full bg-white/10 border border-white/10 backdrop-blur">
-      North Olmsted, Ohio · Open to DevOps / SRE roles
-    </span>
-    <h1 class="mt-6 text-4xl md:text-5xl font-bold tracking-tight">Azamat Apsamatov</h1>
-    <p class="mt-4 max-w-3xl mx-auto text-gray-200">
-      MS in Software Engineering (CSU). Ex-Huawei / ZTE / National Bank of Kyrgyzstan (Network Engineering).
-      I design, automate, and operate cloud-native infrastructure: Kubernetes · AWS · Terraform · CI/CD · Linux.
-    </p>
-    <div class="mt-6 flex flex-wrap justify-center gap-3">
-      <a href="https://github.com/azakg" target="_blank"
-         class="px-4 py-2 rounded-lg border border-white/15 bg-white/5 hover:bg-white/10 transition">
-        GitHub
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Samal_Studio</title>
+    <meta
+      name="description"
+      content="Samal_Studio is a boutique interior design studio focused on timeless, layered homes."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top">
+        <span class="brand-mark">SS</span>
+        <span class="brand-text">Samal_Studio</span>
       </a>
-      <a href="https://linkedin.com/in/azamat-apsamatov-b1b097a9" target="_blank"
-         class="px-4 py-2 rounded-lg border border-white/15 bg-white/5 hover:bg-white/10 transition">
-        LinkedIn
-      </a>
-      <a href="mailto:azakgzuu@gmail.com"
-         class="px-4 py-2 rounded-lg border border-white/15 bg-white/5 hover:bg-white/10 transition">
-        Email
-      </a>
-      <a href="Azamat Apsamatov.docx" download
-         class="px-4 py-2 rounded-lg bg-indigo-500 hover:bg-indigo-600 text-white transition">
-        Download Resume
-      </a>
-    </div>
-  </header>
+      <nav class="site-nav">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <!-- Programming Skills -->
-  <section class="relative max-w-5xl mx-auto px-6 py-8">
-    <h2 class="text-2xl font-semibold mb-4">Programming Skills</h2>
-    <div class="flex flex-wrap gap-2">
-      <span class="px-3 py-1 text-sm rounded-full bg-white/10 border border-white/10">Python</span>
-      <span class="px-3 py-1 text-sm rounded-full bg-white/10 border border-white/10">Java</span>
-      <span class="px-3 py-1 text-sm rounded-full bg-white/10 border border-white/10">C</span>
-      <span class="px-3 py-1 text-sm rounded-full bg-white/10 border border-white/10">Assembly</span>
-      <span class="px-3 py-1 text-sm rounded-full bg-white/10 border border-white/10">Bash</span>
-      <span class="px-3 py-1 text-sm rounded-full bg-white/10 border border-white/10">SQL</span>
-      <span class="px-3 py-1 text-sm rounded-full bg-white/10 border border-white/10">Flask</span>
-      <span class="px-3 py-1 text-sm rounded-full bg-white/10 border border-white/10">Django (basics)</span>
-    </div>
-  </section>
+    <main id="top">
+      <section class="story-block hero-block">
+        <div class="sticky-photo photo-hero" aria-hidden="true"></div>
+        <div class="panel-shell hero-shell">
+          <article class="info-panel hero-panel">
+            <p class="eyebrow">Samal_Studio</p>
+            <h1>Timeless luxury for modern, deeply personal homes.</h1>
+            <p class="lead">
+              We create warm residential interiors that feel composed,
+              effortless and tailored to the people living in them.
+            </p>
+            <a class="button" href="#contact">Book a Consultation</a>
+          </article>
+        </div>
+      </section>
 
-  <!-- Core Skills -->
-  <section class="relative max-w-6xl mx-auto px-6 py-8">
-    <h2 class="text-2xl font-semibold mb-6">Core Skills</h2>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur shadow">
-        <h3 class="font-semibold">Cloud & IaC</h3>
-        <p class="mt-1 text-sm text-gray-200/80">AWS (EC2, VPC, IAM, EKS), Terraform, Helm, Ansible</p>
-      </div>
-      <div class="p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur shadow">
-        <h3 class="font-semibold">Containers</h3>
-        <p class="mt-1 text-sm text-gray-200/80">Docker, Kubernetes, NGINX Ingress</p>
-      </div>
-      <div class="p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur shadow">
-        <h3 class="font-semibold">CI/CD & Automation</h3>
-        <p class="mt-1 text-sm text-gray-200/80">GitHub Actions, GitLab CI, Python & Bash automation</p>
-      </div>
-      <div class="p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur shadow">
-        <h3 class="font-semibold">Security & Observability</h3>
-        <p class="mt-1 text-sm text-gray-200/80">Grafana/Prometheus, logging, DNS security labs, IAM/RBAC</p>
-      </div>
-    </div>
-  </section>
+      <section class="quote-band">
+        <p class="eyebrow">Visionary. Collaborator. Detail-Driven.</p>
+        <blockquote>
+          “Spaces should dazzle the eye, but also feel intuitive, grounded and
+          livable every day.”
+        </blockquote>
+      </section>
 
-  <!-- Certifications -->
-  <section class="relative max-w-5xl mx-auto px-6 py-8">
-    <h2 class="text-2xl font-semibold mb-4">Certifications</h2>
-    <ul class="space-y-2 text-gray-200">
-        <li>✅ Cisco CCNA</li>       
-        <li>✅ Amazon — AWS Cloud Practitioner</li>
-        <li>🛠️ Kubernetes: CKA — <em>in progress</em></li>       
-        <li>🗂️ AWS Solutions Architect — <em>planned</em></li>
-    </ul>
-  </section>
+      <section class="story-block" id="services">
+        <div class="sticky-photo photo-services" aria-hidden="true"></div>
+        <div class="panel-shell">
+          <article class="info-panel services-panel">
+            <p class="eyebrow">Services</p>
+            <h2>Not just decor</h2>
+            <p>
+              Samal_Studio shapes interiors around architecture, setting and
+              lifestyle. The result is a home that feels elevated without
+              losing comfort.
+            </p>
+            <ul class="service-list">
+              <li>Conceptual design</li>
+              <li>Space planning and furniture layouts</li>
+              <li>Architectural detailing</li>
+              <li>Furniture and lighting selection</li>
+              <li>Custom joinery and upholstery</li>
+              <li>Color and materials consultation</li>
+              <li>Art and styling direction</li>
+              <li>Project coordination</li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
-  <!-- Projects -->
-  <section class="relative max-w-6xl mx-auto px-6 py-8">
-    <h2 class="text-2xl font-semibold mb-6">Selected Projects</h2>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur hover:bg-white/10 transition">
-        <h3 class="font-semibold">Kubernetes Ingress Lab</h3>
-        <p class="mt-1 text-sm text-gray-200/80">NGINX Ingress with multiple services; deploy & teardown scripts.</p>
-      </div>
-      <div class="p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur hover:bg-white/10 transition">
-        <h3 class="font-semibold">DNS Security Lab</h3>
-        <p class="mt-1 text-sm text-gray-200/80">Cache poisoning with BIND; mitigation and logging.</p>
-      </div>
-      <div class="p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur hover:bg-white/10 transition">
-        <h3 class="font-semibold">Personal Budget Tracker</h3>
-        <p class="mt-1 text-sm text-gray-200/80">Flask + SQLite app with monthly reports, CI/CD pipeline.</p>
-      </div>
-      <div class="p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur hover:bg-white/10 transition">
-        <h3 class="font-semibold">School Bus Tracker</h3>
-        <p class="mt-1 text-sm text-gray-200/80">Flutter app for realtime GPS tracking of school buses.</p>
-      </div>
-      <div class="p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur hover:bg-white/10 transition">
-        <h3 class="font-semibold">DevOps Alerting Demo</h3>
-        <p class="mt-1 text-sm text-gray-200/80">Telegram alerts if response &gt;1ms; auto-blacklist DDoS IPs.</p>
-      </div>
-      <div class="p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur hover:bg-white/10 transition">
-        <h3 class="font-semibold">Voice Appointment Agent</h3>
-        <p class="mt-1 text-sm text-gray-200/80">n8n + LLM voice agent to confirm appointments.</p>
-      </div>
-    </div>
-  </section>
+      <section class="designer-section" id="about">
+        <div class="designer-copy">
+          <p class="eyebrow">About</p>
+          <h2>A home should be a personal sanctuary.</h2>
+          <p>
+            Samal_Studio is a full-service residential design studio for clients
+            who value thoughtful detail, calm luxury and a home with lasting
+            character.
+          </p>
+          <p>
+            We combine custom elements, tactile materials and practical
+            planning, collaborating closely with homeowners, architects,
+            contractors and artisans from concept through completion.
+          </p>
+          <div class="philosophy-card">
+            <p class="eyebrow">Studio Philosophy</p>
+            <p>
+              Each project is shaped around the client’s routine, taste and
+              aspirations. The goal is not trend, but a space that feels deeply
+              natural to return to.
+            </p>
+          </div>
+        </div>
+        <div class="designer-portrait-wrap">
+          <img
+            class="designer-portrait"
+            src="images/Nurjamal.png"
+            alt="Portrait of a woman representing the Samal_Studio designer"
+          />
+        </div>
+      </section>
 
-  <!-- Experience -->
-  <section class="relative max-w-6xl mx-auto px-6 py-8">
-    <h2 class="text-2xl font-semibold mb-6">Experience</h2>
-    <ul class="space-y-4">
-      <li>
-        <strong>Huawei — Network Engineer</strong><br>
-        <span class="text-gray-300 text-sm">Configured and optimized multi-region networks.</span>
-      </li>
-      <li>
-        <strong>ZTE — Systems/Network Engineer</strong><br>
-        <span class="text-gray-300 text-sm">Deployed telecom infrastructure; automated operations.</span>
-      </li>
-      <li>
-        <strong>National Bank of Kyrgyzstan — SysAdmin</strong><br>
-        <span class="text-gray-300 text-sm">Maintained secure systems; improved monitoring.</span>
-      </li>
-    </ul>
-  </section>
+      <section class="story-block">
+        <div class="sticky-photo photo-projects" aria-hidden="true"></div>
+        <div class="panel-shell">
+          <article class="info-panel project-panel">
+            <p class="eyebrow">Projects</p>
+            <h2>Layered interiors with warmth, balance and restraint.</h2>
+            <p>
+              Our work moves between coastal calm, urban sophistication and
+              family-centered comfort while maintaining a quiet, timeless tone.
+            </p>
+            <p>
+              Every room is built around flow, texture and proportion so the
+              finished home feels both polished and easy to live in.
+            </p>
+          </article>
+        </div>
+      </section>
 
-  <!-- Contact -->
-  <section class="relative max-w-4xl mx-auto px-6 py-10 text-center">
-    <h2 class="text-2xl font-semibold mb-6">Get in Touch</h2>
-    <p class="text-gray-200">Open to DevOps, Cloud, SRE roles.</p>
-    <div class="mt-4 flex justify-center gap-4">
-      <a href="mailto:azakgzuu@gmail.com" class="underline hover:text-indigo-300 transition">Email</a>
-      <a href="https://github.com/azakg" target="_blank" class="underline hover:text-indigo-300 transition">GitHub</a>
-      <a href="https://linkedin.com/in/azamat-apsamatov-b1b097a9" target="_blank" class="underline hover:text-indigo-300 transition">LinkedIn</a>
-    </div>
-  </section>
+      <section class="gallery-section" id="projects">
+        <div class="gallery-heading">
+          <p class="eyebrow">Selected Interiors</p>
+          <h2>Spaces designed to feel rich in texture and calm in mood.</h2>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-card tall">
+            <img
+              src="./images/v1.png"
+              alt="Elegant neutral living room interior"
+            />
+          </figure>
+          <figure class="gallery-card">
+            <img
+              src="images/h1.png"
+              alt="Textural interior with layered furnishings"
+            />
+          </figure>
+          <figure class="gallery-card">
+            <img
+              src="images/h2.png"
+              alt="Warm sitting room with sculptural seating"
+            />
+          </figure>
+          <figure class="gallery-card wide">
+            <img
+              src="images/h5.png"
+              alt="Refined dining room interior"
+            />
+          </figure>
+          <figure class="gallery-card">
+            <img
+              src="images/v2.png"
+              alt="Open concept interior with natural light"
+            />
+          </figure>
+          <figure class="gallery-card">
+            <img
+              src="images/h5.png"
+              alt="Luxury interior detail"
+            />
+          </figure>
+          <figure class="gallery-card">
+            <img
+              src="images/h4.png"
+              alt="Soft-toned bedroom interior"
+            />
+          </figure>
+          <figure class="gallery-card tall">
+            <img
+              src="images/v5.png"
+              alt="Light-filled sitting area"
+            />
+          </figure>
+          <figure class="gallery-card wide">
+            <img
+              src="images/h1.png"
+              alt="Elegant interior with balanced proportions"
+            />
+          </figure>
+        </div>
+      </section>
 
-  <footer class="relative py-8 text-center text-xs text-gray-400">
-    © 2025 Azamat Apsamatov
-  </footer>
-</body>
+      <section class="contact-section" id="contact">
+        <div class="contact-card">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2>Start with a conversation about your home.</h2>
+            <p>
+              Temporary contact details are set for now and can be replaced with
+              your real studio information afterward.
+            </p>
+          </div>
+          <div class="contact-details">
+            <a href="mailto:hello@samalstudio.com">hello@samalstudio.com</a>
+            <a href="tel:+12167780247">+1 (216) 778-0247</a>
+            <p>Cleveland, Ohio USA</p>
+            <a href="https://www.instagram.com/nika_cosmetologist_/" target="_blank" rel="noreferrer">
+              <strong>
+                Instagram
+              </strong>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

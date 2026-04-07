@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Azamat Apsamatov — Portfolio</title>
+  <meta name="description" content="DevOps / SRE portfolio of Azamat Apsamatov — Kubernetes, AWS, Terraform, CI/CD, Linux." />
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Subtle animated grid background */
+    .bg-grid:before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px) 0 0/36px 36px,
+        linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px) 0 0/36px 36px;
+      mask-image: radial-gradient(70% 50% at 50% 20%, black 40%, transparent 100%);
+      pointer-events:none;
+    }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X90MRZBM8H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-X90MRZBM8H');
+</script>
+
+</head>
+<body class="relative min-h-screen bg-gradient-to-br from-gray-900 via-indigo-900 to-slate-800 text-gray-100">
+  <!-- Decorative grid -->
+  <div class="bg-grid absolute inset-0"></div>
+
+  <!-- Header / Hero -->
+  <header class="relative max-w-5xl mx-auto px-6 pt-16 pb-10 text-center">
+    <span class="inline-block px-3 py-1 text-sm rounded-full bg-white/10 border border-white/10 backdrop-blur">
+      North Olmsted, Ohio · Open to DevOps / SRE roles
+    </span>
+    <h1 class="mt-6 text-4xl md:text-5xl font-bold tracking-tight">Azamat Apsamatov</h1>
+    <p class="mt-4 max-w-3xl mx-auto text-gray-200">
+      MS in Software Engineering (CSU). Ex-Huawei / ZTE / National Bank of Kyrgyzstan (Network Engineering).
+      I design, automate, and operate cloud-native infrastructure: Kubernetes · AWS · Terraform · CI/CD · Linux.
+    </p>
+    <div class="mt-6 flex flex-wrap justify-center gap-3">
+      <a href="https://github.com/azakg" target="_blank"
+         class="px-4 py-2 rounded-lg border border-white/15 bg-white/5 hover:bg-white/10 transition">
+        GitHub
+      </a>
+      <a href="https://linkedin.com/in/azamat-apsamatov-b1b097a9" target="_blank"
+         class="px-4 py-2 rounded-lg border border-white/15 bg-white/5 hover:bg-white/10 transition">
+        LinkedIn
+      </a>
+      <a href="mailto:azakgzuu@gmail.com"
+         class="px-4 py-2 rounded-lg border border-white/15 bg-white/5 hover:bg-white/10 transition">
+        Email
+      </a>
+      <a href="Azamat Apsamatov.docx" download
+         class="px-4 py-2 rounded-lg bg-indigo-500 hover:bg-indigo-600 text-white transition">
+        Download Resume
+      </a>
+    </div>
+  </header>
+
+  <!-- Programming Skills -->
+  <section class="relative max-w-5xl mx-auto px-6 py-8">
+    <h2 class="text-2xl font-semibold mb-4">Programming Skills</h2>
+    <div class="flex flex-wrap gap-2">
+      <span class="px-3 py-1 text-sm rounded-full bg-white/10 border border-white/10">Python</span>
+      <span class="px-3 py-1 text-sm rounded-full bg-white/10 border border-white/10">Java</span>
+      <span class="px-3 py-1 text-sm rounded-full bg-white/10 border border-white/10">C</span>
+      <span class="px-3 py-1 text-sm rounded-full bg-white/10 border border-white/10">Assembly</span>
+      <span class="px-3 py-1 text-sm rounded-full bg-white/10 border border-white/10">Bash</span>
+      <span class="px-3 py-1 text-sm rounded-full bg-white/10 border border-white/10">SQL</span>
+      <span class="px-3 py-1 text-sm rounded-full bg-white/10 border border-white/10">Flask</span>
+      <span class="px-3 py-1 text-sm rounded-full bg-white/10 border border-white/10">Django (basics)</span>
+    </div>
+  </section>
+
+  <!-- Core Skills -->
+  <section class="relative max-w-6xl mx-auto px-6 py-8">
+    <h2 class="text-2xl font-semibold mb-6">Core Skills</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur shadow">
+        <h3 class="font-semibold">Cloud & IaC</h3>
+        <p class="mt-1 text-sm text-gray-200/80">AWS (EC2, VPC, IAM, EKS), Terraform, Helm, Ansible</p>
+      </div>
+      <div class="p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur shadow">
+        <h3 class="font-semibold">Containers</h3>
+        <p class="mt-1 text-sm text-gray-200/80">Docker, Kubernetes, NGINX Ingress</p>
+      </div>
+      <div class="p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur shadow">
+        <h3 class="font-semibold">CI/CD & Automation</h3>
+        <p class="mt-1 text-sm text-gray-200/80">GitHub Actions, GitLab CI, Python & Bash automation</p>
+      </div>
+      <div class="p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur shadow">
+        <h3 class="font-semibold">Security & Observability</h3>
+        <p class="mt-1 text-sm text-gray-200/80">Grafana/Prometheus, logging, DNS security labs, IAM/RBAC</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="relative max-w-5xl mx-auto px-6 py-8">
+    <h2 class="text-2xl font-semibold mb-4">Certifications</h2>
+    <ul class="space-y-2 text-gray-200">
+        <li>✅ Cisco CCNA</li>       
+        <li>✅ Amazon — AWS Cloud Practitioner</li>
+        <li>🛠️ Kubernetes: CKA — <em>in progress</em></li>       
+        <li>🗂️ AWS Solutions Architect — <em>planned</em></li>
+    </ul>
+  </section>
+
+  <!-- Projects -->
+  <section class="relative max-w-6xl mx-auto px-6 py-8">
+    <h2 class="text-2xl font-semibold mb-6">Selected Projects</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur hover:bg-white/10 transition">
+        <h3 class="font-semibold">Kubernetes Ingress Lab</h3>
+        <p class="mt-1 text-sm text-gray-200/80">NGINX Ingress with multiple services; deploy & teardown scripts.</p>
+      </div>
+      <div class="p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur hover:bg-white/10 transition">
+        <h3 class="font-semibold">DNS Security Lab</h3>
+        <p class="mt-1 text-sm text-gray-200/80">Cache poisoning with BIND; mitigation and logging.</p>
+      </div>
+      <div class="p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur hover:bg-white/10 transition">
+        <h3 class="font-semibold">Personal Budget Tracker</h3>
+        <p class="mt-1 text-sm text-gray-200/80">Flask + SQLite app with monthly reports, CI/CD pipeline.</p>
+      </div>
+      <div class="p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur hover:bg-white/10 transition">
+        <h3 class="font-semibold">School Bus Tracker</h3>
+        <p class="mt-1 text-sm text-gray-200/80">Flutter app for realtime GPS tracking of school buses.</p>
+      </div>
+      <div class="p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur hover:bg-white/10 transition">
+        <h3 class="font-semibold">DevOps Alerting Demo</h3>
+        <p class="mt-1 text-sm text-gray-200/80">Telegram alerts if response &gt;1ms; auto-blacklist DDoS IPs.</p>
+      </div>
+      <div class="p-5 rounded-2xl border border-white/10 bg-white/5 backdrop-blur hover:bg-white/10 transition">
+        <h3 class="font-semibold">Voice Appointment Agent</h3>
+        <p class="mt-1 text-sm text-gray-200/80">n8n + LLM voice agent to confirm appointments.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="relative max-w-6xl mx-auto px-6 py-8">
+    <h2 class="text-2xl font-semibold mb-6">Experience</h2>
+    <ul class="space-y-4">
+      <li>
+        <strong>Huawei — Network Engineer</strong><br>
+        <span class="text-gray-300 text-sm">Configured and optimized multi-region networks.</span>
+      </li>
+      <li>
+        <strong>ZTE — Systems/Network Engineer</strong><br>
+        <span class="text-gray-300 text-sm">Deployed telecom infrastructure; automated operations.</span>
+      </li>
+      <li>
+        <strong>National Bank of Kyrgyzstan — SysAdmin</strong><br>
+        <span class="text-gray-300 text-sm">Maintained secure systems; improved monitoring.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section class="relative max-w-4xl mx-auto px-6 py-10 text-center">
+    <h2 class="text-2xl font-semibold mb-6">Get in Touch</h2>
+    <p class="text-gray-200">Open to DevOps, Cloud, SRE roles.</p>
+    <div class="mt-4 flex justify-center gap-4">
+      <a href="mailto:azakgzuu@gmail.com" class="underline hover:text-indigo-300 transition">Email</a>
+      <a href="https://github.com/azakg" target="_blank" class="underline hover:text-indigo-300 transition">GitHub</a>
+      <a href="https://linkedin.com/in/azamat-apsamatov-b1b097a9" target="_blank" class="underline hover:text-indigo-300 transition">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer class="relative py-8 text-center text-xs text-gray-400">
+    © 2025 Azamat Apsamatov
+  </footer>
+</body>
+</html>
