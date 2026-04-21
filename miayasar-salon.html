@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miyasar — Luxury Beauty Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --cream: #FAF7F2;
+    --blush: #F2D9D0;
+    --blush-deep: #E8B9A8;
+    --rose: #C9827A;
+    --rose-dark: #9E5E57;
+    --beige: #EDE4D8;
+    --beige-mid: #D6C8B8;
+    --warm-white: #FFFCF8;
+    --text-dark: #2C1F1C;
+    --text-mid: #6B4F4A;
+    --text-light: #A08880;
+    --glass-bg: rgba(255,252,248,0.72);
+    --glass-border: rgba(210,185,170,0.35);
+    --shadow-soft: 0 8px 40px rgba(160,110,100,0.10);
+    --shadow-card: 0 4px 24px rgba(160,110,100,0.12);
+    --radius: 20px;
+    --radius-lg: 32px;
+    --radius-xl: 48px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 20px 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    transition: all 0.4s ease;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px; font-weight: 400; letter-spacing: 0.06em;
+    color: var(--text-dark);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--rose); font-style: italic; }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    font-size: 13px; font-weight: 400; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--text-mid);
+    text-decoration: none; transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--rose); }
+  .nav-cta {
+    background: var(--text-dark);
+    color: var(--warm-white) !important;
+    padding: 10px 24px;
+    border-radius: 100px;
+    transition: background 0.3s, transform 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--rose-dark) !important; transform: translateY(-1px); }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 120px 60px 80px;
+    position: relative; overflow: hidden;
+    background: url('img/backgraund/wall.jpeg') center/cover no-repeat;
+  }
+  #hero::after {
+    content: '';
+    position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(
+      to right,
+      rgba(250, 240, 232, 0.85) 0%,
+      rgba(250, 240, 232, 0.45) 55%,
+      rgba(250, 240, 232, 0.08) 100%
+    );
+  }
+  .hero-deco {
+    position: absolute; border-radius: 50%;
+    background: var(--blush); opacity: 0.15; pointer-events: none;
+    mix-blend-mode: soft-light;
+  }
+  .hero-deco-1 { width: 600px; height: 600px; top: -150px; right: -100px; }
+  .hero-deco-2 { width: 300px; height: 300px; bottom: 50px; left: 100px; opacity: 0.15; }
+  .hero-content { position: relative; z-index: 2; max-width: 660px; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 12px; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--rose);
+    margin-bottom: 28px;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block; width: 32px; height: 1px; background: var(--rose);
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(58px, 7vw, 92px);
+    font-weight: 300; line-height: 1.08; letter-spacing: -0.01em;
+    color: var(--text-dark); margin-bottom: 28px;
+  }
+  h1 em { font-style: italic; color: var(--rose); }
+  .hero-sub {
+    font-size: 17px; font-weight: 300; line-height: 1.75;
+    color: var(--text-mid); max-width: 460px; margin-bottom: 52px;
+  }
+  .hero-actions { display: flex; align-items: center; gap: 24px; }
+  .btn-primary {
+    background: var(--rose);
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px; font-weight: 500; letter-spacing: 0.04em;
+    padding: 18px 44px; border-radius: 100px; border: none;
+    cursor: pointer; text-decoration: none;
+    transition: background 0.3s, transform 0.25s, box-shadow 0.3s;
+    box-shadow: 0 8px 32px rgba(201,130,122,0.38);
+    display: inline-block;
+  }
+  .btn-primary:hover {
+    background: var(--rose-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(201,130,122,0.48);
+  }
+  .btn-secondary {
+    font-size: 14px; font-weight: 400; color: var(--text-mid);
+    text-decoration: none; display: flex; align-items: center; gap: 8px;
+    transition: color 0.3s;
+  }
+  .btn-secondary:hover { color: var(--rose); }
+  .btn-secondary svg { transition: transform 0.3s; }
+  .btn-secondary:hover svg { transform: translateX(4px); }
+  .hero-stats {
+    position: absolute; bottom: 60px; right: 60px; z-index: 2;
+    display: flex; gap: 52px;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px; font-weight: 300; line-height: 1; color: var(--text-dark);
+  }
+  .stat-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); margin-top: 6px; }
+
+  /* ─── SECTION BASE ─── */
+  section { padding: 110px 60px; }
+  .section-tag {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--rose);
+    display: flex; align-items: center; gap: 10px; margin-bottom: 18px;
+  }
+  .section-tag::before { content: ''; display: block; width: 24px; height: 1px; background: var(--rose); }
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4.5vw, 58px);
+    font-weight: 300; line-height: 1.12; color: var(--text-dark);
+    margin-bottom: 16px;
+  }
+  .section-title em { font-style: italic; color: var(--rose); }
+  .section-sub {
+    font-size: 16px; font-weight: 300; line-height: 1.8;
+    color: var(--text-mid); max-width: 520px;
+  }
+  .section-header { margin-bottom: 72px; }
+
+  /* ─── SERVICES ─── */
+  #services { background: var(--warm-white); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  }
+  .service-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 44px 32px;
+    transition: transform 0.35s, box-shadow 0.35s;
+    cursor: pointer; position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute;
+    inset: 0; border-radius: inherit;
+    background: linear-gradient(160deg, rgba(242,217,208,0.35) 0%, transparent 60%);
+    opacity: 0; transition: opacity 0.35s;
+  }
+  .service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-soft); }
+  .service-card:hover::before { opacity: 1; }
+  .service-icon {
+    width: 56px; height: 56px; border-radius: 16px;
+    background: var(--blush); display: flex; align-items: center; justify-content: center;
+    margin-bottom: 28px; font-size: 24px;
+  }
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px; font-weight: 400; color: var(--text-dark); margin-bottom: 14px;
+  }
+  .service-desc {
+    font-size: 14px; font-weight: 300; line-height: 1.8; color: var(--text-mid);
+    margin-bottom: 28px;
+  }
+  .service-link {
+    font-size: 12px; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--rose); text-decoration: none;
+    display: flex; align-items: center; gap: 8px; transition: gap 0.3s;
+  }
+  .service-card:hover .service-link { gap: 14px; }
+
+  /* ─── GALLERY ─── */
+  #gallery { background: var(--cream); }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, 280px);
+    gap: 16px;
+  }
+  .gallery-item {
+    border-radius: var(--radius);
+    overflow: hidden; position: relative; cursor: pointer;
+  }
+  .gallery-item-1 { grid-column: 1 / 5; grid-row: 1 / 2; }
+  .gallery-item-2 { grid-column: 5 / 9; grid-row: 1 / 3; }
+  .gallery-item-3 { grid-column: 9 / 13; grid-row: 1 / 2; }
+  .gallery-item-4 { grid-column: 1 / 5; grid-row: 2 / 3; }
+  .gallery-item-5 { grid-column: 9 / 13; grid-row: 2 / 3; }
+  .gallery-img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s ease;
+    background: var(--beige);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .gallery-item:hover .gallery-img { transform: scale(1.04); }
+  .gallery-label {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(44,31,28,0.65) 0%, transparent 100%);
+    padding: 40px 24px 20px;
+    opacity: 0; transition: opacity 0.4s;
+  }
+  .gallery-item:hover .gallery-label { opacity: 1; }
+  .gallery-label-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-weight: 300; color: white; letter-spacing: 0.04em;
+  }
+  .gallery-label-tag {
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: rgba(255,255,255,0.72);
+  }
+  .ba-badge {
+    position: absolute; top: 16px; left: 16px;
+    background: rgba(255,252,248,0.9);
+    font-size: 10px; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--rose);
+    padding: 6px 14px; border-radius: 100px;
+    backdrop-filter: blur(8px);
+  }
+
+  /* ─── PRICING (MENU STYLE) ─── */
+  #pricing { background: var(--warm-white); }
+  .pricing-tabs {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin-bottom: 48px; justify-content: center;
+  }
+  .ptab {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--text-mid);
+    padding: 10px 22px; border-radius: 100px; cursor: pointer;
+    border: 1px solid var(--beige-mid);
+    background: transparent;
+    transition: all 0.25s; white-space: nowrap;
+  }
+  .ptab:hover { border-color: var(--rose); color: var(--rose); }
+  .ptab.active {
+    background: var(--text-dark); color: white;
+    border-color: var(--text-dark);
+  }
+  .pricing-panel { display: none; }
+  .pricing-panel.active { display: block; }
+  .price-menu {
+    max-width: 780px; margin: 0 auto;
+    background: white; border: 1px solid var(--beige);
+    border-radius: var(--radius-lg); overflow: hidden;
+  }
+  .price-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 18px 36px; gap: 20px;
+    border-bottom: 1px solid var(--beige);
+    transition: background 0.2s;
+  }
+  .price-row:last-child { border-bottom: none; }
+  .price-row:hover { background: var(--cream); }
+  .price-row-name {
+    font-size: 15px; font-weight: 300; color: var(--text-dark); flex: 1; line-height: 1.5;
+  }
+  .price-row-duration {
+    font-size: 12px; color: var(--text-light);
+    white-space: nowrap; margin-right: 24px; flex-shrink: 0;
+  }
+  .price-row-amount {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 400; color: var(--rose);
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .price-row-addon {
+    font-size: 12px; color: var(--text-light);
+    display: block; margin-top: 3px;
+  }
+
+  /* ─── TESTIMONIALS ─── */
+  #testimonials { background: var(--cream); }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .testi-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg); padding: 40px 36px;
+    transition: transform 0.35s, box-shadow 0.35s;
+  }
+  .testi-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-soft); }
+  .testi-stars { color: var(--rose); font-size: 14px; letter-spacing: 3px; margin-bottom: 22px; }
+  .testi-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 300; font-style: italic;
+    line-height: 1.65; color: var(--text-dark); margin-bottom: 32px;
+  }
+  .testi-author { display: flex; align-items: center; gap: 14px; }
+  .testi-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--blush); display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; color: var(--rose);
+  }
+  .testi-name { font-size: 14px; font-weight: 500; color: var(--text-dark); }
+  .testi-handle { font-size: 12px; color: var(--text-light); }
+
+  /* ─── ABOUT ─── */
+  #about { background: var(--warm-white); }
+  .about-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center;
+  }
+  .about-img-wrap {
+    position: relative; aspect-ratio: 4/5;
+    border-radius: var(--radius-xl); overflow: hidden;
+  }
+  .about-img-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(145deg, #EDD5C8 0%, #C9A090 60%, #B08070 100%);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .about-img-deco {
+    position: absolute; top: -20px; right: -20px;
+    width: 120px; height: 120px; border-radius: 50%;
+    background: var(--blush); opacity: 0.8; z-index: -1;
+  }
+  .about-badge {
+    position: absolute; bottom: 32px; left: 32px;
+    background: var(--glass-bg); backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius); padding: 20px 28px;
+  }
+  .about-badge-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px; font-weight: 300; color: var(--text-dark);
+  }
+  .about-badge-label { font-size: 12px; color: var(--text-light); }
+  .about-content { }
+  .about-content .section-sub { max-width: 100%; margin-bottom: 28px; }
+  .about-content p {
+    font-size: 16px; font-weight: 300; line-height: 1.9;
+    color: var(--text-mid); margin-bottom: 24px;
+  }
+  .about-signature {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px; font-style: italic; color: var(--rose);
+    margin-top: 40px;
+  }
+
+  /* ─── CONTACT ─── */
+  #contact { background: var(--cream); }
+  .contact-inner { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start; }
+  .contact-info > * { margin-bottom: 40px; }
+  .contact-block { }
+  .contact-block-label {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--rose); margin-bottom: 10px;
+  }
+  .contact-block-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 400; color: var(--text-dark);
+  }
+  .contact-block-value a { color: var(--text-dark); text-decoration: none; transition: color 0.3s; }
+  .contact-block-value a:hover { color: var(--rose); }
+  .contact-hours { display: flex; flex-direction: column; gap: 6px; }
+  .contact-hours span { font-size: 15px; font-weight: 300; color: var(--text-mid); }
+  .map-wrap {
+    border-radius: var(--radius-lg); overflow: hidden;
+    background: var(--beige); height: 380px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .map-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(160deg, #E8DFCF 0%, #D0C4B0 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 12px;
+  }
+  .map-pin-svg { opacity: 0.55; }
+  .map-address-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-style: italic; color: var(--text-mid);
+  }
+  .instagram-row {
+    display: flex; align-items: center; gap: 14px; margin-top: 40px;
+    text-decoration: none; transition: all 0.3s;
+  }
+  .insta-icon {
+    width: 48px; height: 48px; border-radius: 14px;
+    background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .insta-text { }
+  .insta-handle { font-size: 16px; font-weight: 500; color: var(--text-dark); }
+  .insta-sub { font-size: 13px; color: var(--text-light); }
+  .instagram-row:hover .insta-handle { color: var(--rose); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--text-dark);
+    padding: 60px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px; font-weight: 300; color: white; letter-spacing: 0.06em;
+  }
+  .footer-logo span { color: var(--rose); font-style: italic; }
+  .footer-copy { font-size: 13px; color: rgba(255,255,255,0.35); }
+  .footer-links { display: flex; gap: 32px; }
+  .footer-links a { font-size: 12px; color: rgba(255,255,255,0.45); text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.3s; }
+  .footer-links a:hover { color: var(--rose); }
+
+  /* ─── FLOATING BOOK BTN ─── */
+  .float-book {
+    position: fixed; bottom: 32px; right: 32px; z-index: 200;
+    background: var(--rose);
+    color: white; font-family: 'DM Sans', sans-serif;
+    font-size: 13px; font-weight: 500; letter-spacing: 0.06em;
+    padding: 14px 28px; border-radius: 100px;
+    box-shadow: 0 8px 32px rgba(201,130,122,0.5);
+    cursor: pointer; text-decoration: none;
+    display: flex; align-items: center; gap: 8px;
+    transition: all 0.3s;
+    animation: floatPulse 3s ease-in-out infinite;
+  }
+  .float-book:hover { background: var(--rose-dark); transform: translateY(-3px); box-shadow: 0 16px 40px rgba(201,130,122,0.55); }
+  @keyframes floatPulse {
+    0%, 100% { box-shadow: 0 8px 32px rgba(201,130,122,0.5); }
+    50% { box-shadow: 0 8px 48px rgba(201,130,122,0.7); }
+  }
+
+  /* ─── ANIMATIONS ─── */
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.75s ease, transform 0.75s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-content > * {
+    animation: fadeUp 0.9s ease forwards;
+    opacity: 0;
+  }
+  .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-content > *:nth-child(2) { animation-delay: 0.25s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.4s; }
+  .hero-content > *:nth-child(4) { animation-delay: 0.55s; }
+  .hero-stats { animation: fadeUp 0.9s 0.7s ease forwards; opacity: 0; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Miyasar<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact" class="nav-cta">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-deco hero-deco-1"></div>
+  <div class="hero-deco hero-deco-2"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Luxury Beauty Studio</div>
+    <h1>Where Beauty<br>Meets <em>Artistry</em></h1>
+    <p class="hero-sub">A sanctuary of elegance. Expertly crafted lashes, flawless nails, radiant skincare — designed to make you feel extraordinary.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Book Your Appointment</a>
+      <a href="#services" class="btn-secondary">
+        Explore Services
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">8+</div><div class="stat-label">Years of Mastery</div></div>
+    <div class="stat"><div class="stat-num">2k</div><div class="stat-label">Happy Clients</div></div>
+    <div class="stat"><div class="stat-num">4.9</div><div class="stat-label">Average Rating</div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-header">
+    <div class="section-tag reveal">Our Expertise</div>
+    <h2 class="section-title reveal reveal-delay-1">Curated <em>Services</em><br>for the Modern Woman</h2>
+    <p class="section-sub reveal reveal-delay-2">Each treatment is a ritual — performed with precision, passion, and only the finest products.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-icon">✦</div>
+      <div class="service-name">Lash Artistry</div>
+      <p class="service-desc">From natural lifts to dramatic volume sets — each lash is applied with surgical precision for a seamless, long-lasting finish.</p>
+      <a href="#pricing" class="service-link">View Treatments →</a>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-icon">◈</div>
+      <div class="service-name">Nail Atelier</div>
+      <p class="service-desc">Gel, builder, sculptured acrylics, and nail art. Your hands are a canvas — we treat them as one.</p>
+      <a href="#pricing" class="service-link">View Treatments →</a>
+    </div>
+    <div class="service-card reveal reveal-delay-3">
+      <div class="service-icon">◯</div>
+      <div class="service-name">Skin Rituals</div>
+      <p class="service-desc">Medical-grade facials, bespoke skin protocols, and LED therapy. Your most luminous skin starts here.</p>
+      <a href="#pricing" class="service-link">View Treatments →</a>
+    </div>
+    <div class="service-card reveal reveal-delay-4">
+      <div class="service-icon">⌘</div>
+      <div class="service-name">Brow Couture</div>
+      <p class="service-desc">Lamination, tinting, shaping, and microblading. Perfectly sculpted brows that frame your face beautifully.</p>
+      <a href="#pricing" class="service-link">View Treatments →</a>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="section-header" style="max-width: 600px;">
+    <div class="section-tag reveal">Before & After</div>
+    <h2 class="section-title reveal reveal-delay-1">Our Work<br>Speaks <em>For Itself</em></h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item gallery-item-1 reveal">
+      <div class="gallery-img"><img src="img/before_after/1.png" alt="Lash Extensions Before & After" style="width:100%; height:100%; object-fit:cover;"></div>
+      <div class="ba-badge">Before · After</div>
+      <div class="gallery-label"><div class="gallery-label-tag">Lashes</div><div class="gallery-label-text">Lash Extensions</div></div>
+    </div>
+    <div class="gallery-item gallery-item-2 reveal reveal-delay-1">
+      <div class="gallery-img"><img src="img/before_after/2.png" alt="PMU Lips Before & After" style="width:100%; height:100%; object-fit:cover;"></div>
+      <div class="ba-badge">Before · After</div>
+      <div class="gallery-label"><div class="gallery-label-tag">PMU Lips</div><div class="gallery-label-text">Permanent Makeup</div></div>
+    </div>
+    <div class="gallery-item gallery-item-3 reveal reveal-delay-2">
+      <div class="gallery-img"><img src="img/before_after/3.png" alt="Brow Lamination Before & After" style="width:100%; height:100%; object-fit:cover;"></div>
+      <div class="ba-badge">Before · After</div>
+      <div class="gallery-label"><div class="gallery-label-tag">Brows</div><div class="gallery-label-text">Brow Lamination</div></div>
+    </div>
+    <div class="gallery-item gallery-item-4 reveal reveal-delay-3">
+      <div class="gallery-img"><img src="img/before_after/4.png" alt="Skin Treatment Before & After" style="width:100%; height:100%; object-fit:cover;"></div>
+      <div class="ba-badge">Before · After</div>
+      <div class="gallery-label"><div class="gallery-label-tag">Skincare</div><div class="gallery-label-text">Skin Transformation</div></div>
+    </div>
+    <div class="gallery-item gallery-item-5 reveal reveal-delay-4">
+      <div class="gallery-img"><img src="img/before_after/5.png" alt="Lash Lift Before & After" style="width:100%; height:100%; object-fit:cover;"></div>
+      <div class="ba-badge">Before · After</div>
+      <div class="gallery-label"><div class="gallery-label-tag">Lashes</div><div class="gallery-label-text">Lash Lift</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-header" style="text-align:center;display:flex;flex-direction:column;align-items:center;">
+    <div class="section-tag reveal" style="justify-content:center;">Investment in Yourself</div>
+    <h2 class="section-title reveal reveal-delay-1" style="text-align:center;">Our <em>Services</em> & Pricing</h2>
+    <p class="section-sub reveal reveal-delay-2" style="text-align:center;max-width:480px;margin-bottom:48px;">Every treatment is priced honestly. No hidden fees, no surprises — just exceptional results.</p>
+  </div>
+
+  <div class="pricing-tabs reveal">
+    <button class="ptab active" onclick="showTab('facials', this)">Facials</button>
+    <button class="ptab" onclick="showTab('antiaging', this)">Anti-Aging</button>
+    <button class="ptab" onclick="showTab('peels', this)">Peels & Advanced</button>
+    <button class="ptab" onclick="showTab('micro', this)">Microdermabrasion</button>
+    <button class="ptab" onclick="showTab('light', this)">Light Therapy</button>
+    <button class="ptab" onclick="showTab('addons', this)">Add-Ons</button>
+  </div>
+
+  <div class="pricing-panel active reveal" id="tab-facials">
+    <div class="price-menu">
+      <div class="price-row">
+        <span class="price-row-name">Epilogic — Relaxing Express Mini Facial</span>
+        <span class="price-row-duration">30 min</span>
+        <span class="price-row-amount">$50</span>
+      </div>
+      <div class="price-row">
+        <span class="price-row-name">Dermatologic Facial (Deep Cleansing)</span>
+        <span class="price-row-duration">60 min</span>
+        <span class="price-row-amount">$80</span>
+      </div>
+      <div class="price-row">
+        <span class="price-row-name">Gentleman's Facial (Dermatologic)</span>
+        <span class="price-row-duration">60 min</span>
+        <span class="price-row-amount">$80</span>
+      </div>
+      <div class="price-row">
+        <span class="price-row-name">Back Deep Skin Cleansing</span>
+        <span class="price-row-duration">60 min</span>
+        <span class="price-row-amount">$100</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pricing-panel" id="tab-antiaging">
+    <div class="price-menu">
+      <div class="price-row">
+        <span class="price-row-name">Dermatologic Facial with Anti-Aging Collagen Treatment</span>
+        <span class="price-row-duration">60 min</span>
+        <span class="price-row-amount">$95</span>
+      </div>
+      <div class="price-row">
+        <span class="price-row-name">Dermatologic Facial — Dr. Murad Resurgence Firming & Age Reversal</span>
+        <span class="price-row-duration">60 min</span>
+        <span class="price-row-amount">$95</span>
+      </div>
+      <div class="price-row">
+        <span class="price-row-name">Dermatologic Facial — Dr. Murad Redness Reduction</span>
+        <span class="price-row-duration">60 min</span>
+        <span class="price-row-amount">$95</span>
+      </div>
+      <div class="price-row">
+        <span class="price-row-name">Dermatologic Facial with Vitamin C — Dr. Murad Treatment</span>
+        <span class="price-row-duration">60 min</span>
+        <span class="price-row-amount">$95</span>
+      </div>
+      <div class="price-row">
+        <span class="price-row-name">Signature Luxury Facial</span>
+        <span class="price-row-duration">60 min</span>
+        <span class="price-row-amount">$200</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pricing-panel" id="tab-peels">
+    <div class="price-menu">
+      <div class="price-row">
+        <span class="price-row-name">Glycolic Skin Peel Treatment</span>
+        <span class="price-row-duration">30 min</span>
+        <span class="price-row-amount">$70</span>
+      </div>
+      <div class="price-row">
+        <span class="price-row-name">Dermatologic Facial & AHA Rapid Exfoliating Glycolic Anti-Aging Peel</span>
+        <span class="price-row-duration">60 min</span>
+        <span class="price-row-amount">$95</span>
+      </div>
+      <div class="price-row">
+        <span class="price-row-name">Dermatologic Facial & Clarifying Treatment</span>
+        <span class="price-row-duration">60 min</span>
+        <span class="price-row-amount">$95</span>
+      </div>
+      <div class="price-row">
+        <span class="price-row-name">Biorepeel</span>
+        <span class="price-row-duration">1 treatment</span>
+        <span class="price-row-amount">$170</span>
+      </div>
+      <div class="price-row">
+        <span class="price-row-name">Biorepeel</span>
+        <span class="price-row-duration">4 treatments</span>
+        <span class="price-row-amount">$550</span>
+      </div>
+      <div class="price-row">
+        <span class="price-row-name">Biorepeel</span>
+        <span class="price-row-duration">6 treatments</span>
+        <span class="price-row-amount">$780</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pricing-panel" id="tab-micro">
+    <div class="price-menu">
+      <div class="price-row">
+        <span class="price-row-name">Regular Microdermabrasion</span>
+        <span class="price-row-duration">40 min</span>
+        <span class="price-row-amount">$110</span>
+      </div>
+      <div class="price-row">
+        <span class="price-row-name">Signature Luxury Microdermabrasion</span>
+        <span class="price-row-duration">60 min</span>
+        <span class="price-row-amount">$200</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pricing-panel" id="tab-light">
+    <div class="price-menu">
+      <div class="price-row">
+        <span class="price-row-name">Photo Rejuvenation Light Therapy</span>
+        <span class="price-row-duration">10 min</span>
+        <span class="price-row-amount">$40</span>
+      </div>
+      <div class="price-row">
+        <span class="price-row-name">Photo Rejuvenation Light Therapy</span>
+        <span class="price-row-duration">20 min</span>
+        <span class="price-row-amount">$60</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pricing-panel" id="tab-addons">
+    <div class="price-menu">
+      <div class="price-row">
+        <span class="price-row-name">
+          Ultrasound Treatment
+          <span class="price-row-addon">10 min as add-on — $20</span>
+        </span>
+        <span class="price-row-duration">15 min</span>
+        <span class="price-row-amount">$40</span>
+      </div>
+      <div class="price-row">
+        <span class="price-row-name">
+          Ultrasound Scrub
+          <span class="price-row-addon">10 min as add-on — $20</span>
+        </span>
+        <span class="price-row-duration">15 min</span>
+        <span class="price-row-amount">$40</span>
+      </div>
+      <div class="price-row">
+        <span class="price-row-name">Eye Lift Treatment (Dr. Murad)</span>
+        <span class="price-row-duration">—</span>
+        <span class="price-row-amount">$25</span>
+      </div>
+      <div class="price-row">
+        <span class="price-row-name">Collagen Eye Contour Mask</span>
+        <span class="price-row-duration">—</span>
+        <span class="price-row-amount">$25</span>
+      </div>
+      <div class="price-row">
+        <span class="price-row-name">Renewal Eye Treatment Mask</span>
+        <span class="price-row-duration">—</span>
+        <span class="price-row-amount">$15</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-header" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+    <div class="section-tag reveal" style="justify-content: center;">Client Love</div>
+    <h2 class="section-title reveal reveal-delay-1" style="text-align: center;">What Our <em>Guests</em> Say</h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testi-card reveal reveal-delay-1">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"I walked in feeling ordinary and left feeling like the best version of myself. The attention to detail is absolutely unmatched anywhere in the city."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">S</div>
+        <div><div class="testi-name">Sophia Laurent</div><div class="testi-handle">@sophialaurent</div></div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-delay-2">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"My lashes have never looked this good. The team truly listens to what you want and delivers something even more beautiful than you imagined."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">M</div>
+        <div><div class="testi-name">Mia Chen</div><div class="testi-handle">@miachenbeauty</div></div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-delay-3">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"The Luxe Beauty Day package was everything I needed. The space is gorgeous, the products divine, and I left absolutely glowing. Already rebooked."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">A</div>
+        <div><div class="testi-name">Amélie Fontaine</div><div class="testi-handle">@ameliefontaine</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-inner">
+    <div class="about-img-wrap reveal">
+      <div class="about-img-placeholder">
+        <div style="font-family:'Cormorant Garamond',serif; font-size:20px; font-style:italic; color:rgba(158,94,87,0.75); text-align:center; padding:40px;">The Artist Behind<br>the Studio</div>
+      </div>
+      <div class="about-img-deco"></div>
+      <div class="about-badge">
+        <div class="about-badge-num">2016</div>
+        <div class="about-badge-label">Founded with love</div>
+      </div>
+    </div>
+    <div class="about-content reveal reveal-delay-2">
+      <div class="section-tag">Our Story</div>
+      <h2 class="section-title">Born from a<br>Passion for <em>Beauty</em></h2>
+      <p>Beauty by Miyasar was born from a simple belief: every woman deserves to feel effortlessly beautiful. Founded in 2016, our studio has grown into a destination for those who value quality above all else.</p>
+      <p>We use only the most refined products, and every treatment is performed by certified specialists with years of dedicated practice. Our studio is your sanctuary — a place where luxury meets expertise.</p>
+      <div class="about-signature">Miyasar</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <div class="section-tag reveal">Visit Us</div>
+    <h2 class="section-title reveal reveal-delay-1">Find Your <em>Beauty</em></h2>
+  </div>
+  <div class="contact-inner">
+    <div class="contact-info reveal">
+      <div class="contact-block">
+        <div class="contact-block-label">Phone</div>
+        <div class="contact-block-value"><a href="tel:+12165550189">+1 (216) 555-0189</a></div>
+      </div>
+      <div class="contact-block">
+        <div class="contact-block-label">Address</div>
+        <div class="contact-block-value">14 Rose Petal Lane,<br>Parma Heights, OH</div>
+      </div>
+      <div class="contact-block">
+        <div class="contact-block-label">Hours</div>
+        <div class="contact-hours">
+          <span>Tuesday – Friday &nbsp; 9am – 7pm</span>
+          <span>Saturday &nbsp; 9am – 6pm</span>
+          <span>Sunday – Monday &nbsp; Closed</span>
+        </div>
+      </div>
+      <a href="https://www.instagram.com/beauty_by_miyasar/" class="instagram-row" target="_blank">
+        <div class="insta-icon">
+          <svg width="22" height="22" fill="none" stroke="white" stroke-width="1.8" viewBox="0 0 24 24">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="white" stroke="none"/>
+          </svg>
+        </div>
+        <div class="insta-text">
+          <div class="insta-handle">@beauty_by_miyasar</div>
+          <div class="insta-sub">Follow for daily inspiration</div>
+        </div>
+      </a>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="map-wrap">
+        <div class="map-placeholder">
+          <svg class="map-pin-svg" width="48" height="48" fill="none" viewBox="0 0 24 24">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="#C9827A"/>
+            <circle cx="12" cy="9" r="2.5" fill="white"/>
+          </svg>
+          <div class="map-address-label">14 Rose Petal Lane, Parma Heights</div>
+        </div>
+      </div>
+      <div style="margin-top: 24px; text-align: center;">
+        <a href="#contact" class="btn-primary" style="display: inline-block;">Book Your Appointment</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Miyasar<span>.</span></div>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-copy">© 2025 Beauty by Miyasar. All rights reserved.</div>
+</footer>
+
+<!-- FLOATING CTA -->
+<a href="#contact" class="float-book">
+  <svg width="14" height="14" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+  Book Now
+</a>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.pricing-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.ptab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => obs.observe(el));
+
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 60) {
+    nav.style.boxShadow = '0 4px 32px rgba(160,110,100,0.10)';
+  } else {
+    nav.style.boxShadow = 'none';
+  }
+});
+</script>
+</body>
+</html>
