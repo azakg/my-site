@@ -247,19 +247,19 @@ li {
 .photo-hero {
   background-image:
     linear-gradient(rgba(24, 17, 12, 0.15), rgba(24, 17, 12, 0.15)),
-    url("images/h1.png");
+    url("../images/h1.png");
 }
 
 .photo-services {
   background-image:
     linear-gradient(rgba(24, 17, 12, 0.15), rgba(24, 17, 12, 0.15)),
-    url("images/h2.png");
+    url("../images/h2.png");
 }
 
 .photo-projects {
   background-image:
     linear-gradient(rgba(24, 17, 12, 0.15), rgba(24, 17, 12, 0.15)),
-    url("images/h3.png");
+    url("../images/h3.png");
 }
 
 .gallery-heading {
