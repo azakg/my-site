@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Azamat Apsamatov — Network Engineer focused on network security, infrastructure, monitoring, cloud and automation." />
+  <meta name="theme-color" content="#071018" />
+  <title>Azamat Apsamatov — Network Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <canvas id="network-canvas" aria-hidden="true"></canvas>
+  <div class="page-glow glow-one" aria-hidden="true"></div>
+  <div class="page-glow glow-two" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="Azamat Apsamatov home">
+        <span class="brand-mark">AA</span>
+        <span class="brand-name">Azamat Apsamatov</span>
+      </a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+        <span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#work">Selected Work</a>
+        <a href="#skills">Skills</a>
+        <a class="nav-cta" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="status-dot"></span> Cleveland, Ohio · Network & Infrastructure</div>
+          <h1>Reliable networks.<br><span class="gradient-text">Clear operations.</span><br>Built to scale.</h1>
+          <p class="hero-lede">Network and infrastructure engineer with 10+ years across enterprise IT, telecommunications, monitoring, cloud technologies and automation.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#experience">View experience <span>↘</span></a>
+            <a class="button secondary" href="assets/Azamat_Apsamatov_Resume.pdf" target="_blank" rel="noopener">Download résumé</a>
+          </div>
+          <div class="hero-meta">
+            <span>Network Engineering</span><i></i><span>Security</span><i></i><span>Infrastructure</span><i></i><span>Automation</span>
+          </div>
+        </div>
+
+        <div class="hero-panel reveal delay-1" aria-label="Professional profile summary">
+          <div class="panel-topline">
+            <span>PROFILE / 2026</span>
+            <span class="panel-pulse"><b></b> ACTIVE</span>
+          </div>
+          <div class="terminal-card">
+            <div class="terminal-row"><span class="key">role</span><span class="value">Network Engineer</span></div>
+            <div class="terminal-row"><span class="key">focus</span><span class="value">Security · Infrastructure</span></div>
+            <div class="terminal-row"><span class="key">systems</span><span class="value">Linux · Windows · AWS</span></div>
+            <div class="terminal-row"><span class="key">monitoring</span><span class="value">Zabbix · Grafana</span></div>
+            <div class="terminal-row"><span class="key">automation</span><span class="value">Python · Ansible · n8n</span></div>
+          </div>
+          <div class="signal-bars" aria-hidden="true">
+            <span style="height:31%"></span><span style="height:45%"></span><span style="height:62%"></span><span style="height:75%"></span><span style="height:91%"></span>
+          </div>
+          <div class="panel-caption">Connecting infrastructure, monitoring and automation into dependable operations.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-strip reveal" aria-label="Career highlights">
+      <div class="container stats-grid">
+        <div class="stat"><strong>10+</strong><span>Years in networking & telecom</span></div>
+        <div class="stat"><strong>2G→4G</strong><span>Mobile infrastructure experience</span></div>
+        <div class="stat"><strong>MS</strong><span>Software Engineering</span></div>
+        <div class="stat"><strong>AWS · CCNA</strong><span>Cloud & networking foundation</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container split-heading reveal">
+        <div>
+          <span class="section-kicker">01 / ABOUT</span>
+          <h2>Engineering infrastructure with an operations mindset.</h2>
+        </div>
+        <div class="about-copy">
+          <p>I work across networking, systems and automation — from routers, switches, VLANs, firewalls and telecom infrastructure to Linux, cloud services, monitoring and workflow automation.</p>
+          <p>My background spans large-scale telecom environments, enterprise banking infrastructure and hands-on U.S. IT operations. I focus on practical reliability: visibility, clean troubleshooting, secure access and maintainable systems.</p>
+        </div>
+      </div>
+
+      <div class="container capability-grid">
+        <article class="capability-card reveal">
+          <span class="card-number">01</span>
+          <h3>Network Engineering</h3>
+          <p>Routing, switching, VLANs, TCP/IP, DNS, DHCP, NAT, VPN, firewalls and structured troubleshooting.</p>
+          <div class="card-tags"><span>Cisco</span><span>Fortinet</span><span>Ubiquiti</span></div>
+        </article>
+        <article class="capability-card reveal delay-1">
+          <span class="card-number">02</span>
+          <h3>Infrastructure & Monitoring</h3>
+          <p>Linux and Windows environments, infrastructure visibility, alerting and operational dashboards.</p>
+          <div class="card-tags"><span>Zabbix</span><span>Grafana</span><span>Docker</span></div>
+        </article>
+        <article class="capability-card reveal delay-2">
+          <span class="card-number">03</span>
+          <h3>Cloud & Automation</h3>
+          <p>Cloud fundamentals and automation that reduce manual work and improve repeatability.</p>
+          <div class="card-tags"><span>AWS</span><span>Python</span><span>Ansible</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-bordered" id="experience">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">02 / EXPERIENCE</span>
+          <h2>From telecom backbone to modern IT infrastructure.</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-date">2026</div>
+            <div class="timeline-content">
+              <div class="role-line"><h3>IT Support Specialist</h3><span>AIH Laboratory · Anaheim, CA</span></div>
+              <p>Implemented infrastructure monitoring with Zabbix and Grafana, deployed Snipe-IT asset management, supported Windows/network operations and built Python automation for document workflows.</p>
+              <div class="inline-tags"><span>Zabbix</span><span>Grafana</span><span>Snipe-IT</span><span>Python</span></div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-date">2025</div>
+            <div class="timeline-content">
+              <div class="role-line"><h3>Team Lead, Innovation Pod</h3><span>PigyBak</span></div>
+              <p>Led an automation project integrating scheduling data, REST APIs and n8n workflows to trigger customer reminder calls and reduce manual follow-up.</p>
+              <div class="inline-tags"><span>n8n</span><span>REST APIs</span><span>Automation</span></div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-date">2020—2022</div>
+            <div class="timeline-content">
+              <div class="role-line"><h3>Network Administrator</h3><span>National Bank of the Kyrgyz Republic</span></div>
+              <p>Administered enterprise network infrastructure, supported routers, switches, servers and firewalls, and handled troubleshooting in business-critical environments.</p>
+              <div class="inline-tags"><span>Enterprise Networking</span><span>Firewalls</span><span>IT Operations</span></div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-date">2015—2020</div>
+            <div class="timeline-content">
+              <div class="role-line"><h3>2G / 3G / 4G Support Engineer</h3><span>ZTE Kyrgyzstan</span></div>
+              <p>Supported mobile network infrastructure, deployment, integration, troubleshooting and service restoration across telecom operator environments.</p>
+              <div class="inline-tags"><span>2G/3G/4G</span><span>Integration</span><span>Operations</span></div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-date">2011—2014</div>
+            <div class="timeline-content">
+              <div class="role-line"><h3>Microwave / Transmission Engineer</h3><span>Huawei Technologies</span></div>
+              <p>Deployed and maintained DWDM, SDH and microwave transmission networks supporting mobile rollouts and cross-border connectivity projects.</p>
+              <div class="inline-tags"><span>DWDM</span><span>SDH</span><span>Microwave</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">03 / SELECTED WORK</span>
+          <h2>Practical systems, built for visibility and control.</h2>
+        </div>
+
+        <div class="work-grid">
+          <article class="work-card featured reveal">
+            <div class="work-card-top"><span>MONITORING</span><span>01</span></div>
+            <div class="monitor-ui" aria-hidden="true">
+              <div class="monitor-head"><i></i><i></i><i></i></div>
+              <div class="monitor-chart"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+              <div class="monitor-metrics"><b>CPU 34%</b><b>MEM 58%</b><b>NET 92%</b></div>
+            </div>
+            <h3>Zabbix + Grafana Monitoring</h3>
+            <p>Infrastructure monitoring and dashboards for CPU, memory, disk, network and Windows host visibility.</p>
+          </article>
+
+          <article class="work-card reveal delay-1">
+            <div class="work-card-top"><span>ASSET MANAGEMENT</span><span>02</span></div>
+            <div class="asset-visual" aria-hidden="true">
+              <div class="asset-chip">ASSET-0247</div>
+              <div class="barcode"></div>
+              <div class="asset-lines"><i></i><i></i><i></i></div>
+            </div>
+            <h3>Snipe-IT Deployment</h3>
+            <p>Asset migration, custom fields, CSV imports and barcode-based inventory tracking.</p>
+          </article>
+
+          <article class="work-card reveal delay-2">
+            <div class="work-card-top"><span>AUTOMATION</span><span>03</span></div>
+            <div class="flow-visual" aria-hidden="true">
+              <span>API</span><i></i><span>n8n</span><i></i><span>CALL</span>
+            </div>
+            <h3>Workflow Automation</h3>
+            <p>API-driven workflows connecting schedules, customer data and automated reminder calls.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-bordered" id="skills">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="section-kicker">04 / TOOLKIT</span>
+          <h2>Technology I work with.</h2>
+        </div>
+        <div class="skills-matrix reveal">
+          <div class="skill-row"><strong>Networking</strong><p>TCP/IP · Routing · Switching · VLANs · STP/RSTP · DNS · DHCP · NAT · VPN · Firewalls · Network Security</p></div>
+          <div class="skill-row"><strong>Systems</strong><p>Linux · Windows Server · Docker · Kubernetes · Git · Jenkins · CI/CD</p></div>
+          <div class="skill-row"><strong>Cloud & Automation</strong><p>AWS · EC2 · VPC · S3 · IAM · Python · Ansible · REST APIs · n8n</p></div>
+          <div class="skill-row"><strong>Monitoring</strong><p>Zabbix · Grafana · Infrastructure Monitoring · Troubleshooting · Documentation</p></div>
+          <div class="skill-row"><strong>Telecom</strong><p>2G · 3G · 4G · DWDM · SDH · Microwave · Fiber Optics</p></div>
+        </div>
+
+        <div class="education-grid reveal">
+          <div class="edu-card"><span>EDUCATION</span><h3>MS, Software Engineering</h3><p>Cleveland State University · 2025</p></div>
+          <div class="edu-card"><span>EDUCATION</span><h3>Radio Engineering</h3><p>Kyrgyz State Technical University · 2009</p></div>
+          <div class="edu-card"><span>CERTIFICATIONS</span><h3>AWS Cloud Practitioner</h3><p>Amazon Web Services · 2024</p></div>
+          <div class="edu-card"><span>CERTIFICATIONS</span><h3>CCNA</h3><p>Cisco · Earned 2021</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-box reveal">
+        <span class="section-kicker">05 / CONTACT</span>
+        <h2>Let’s build infrastructure that stays dependable.</h2>
+        <p>For Network Engineering, Network Security, Infrastructure or Operations opportunities, feel free to reach out.</p>
+        <div class="contact-actions">
+          <a class="button primary" href="mailto:azakgzuu@gmail.com">Email me <span>↗</span></a>
+          <a class="button secondary" href="https://www.linkedin.com/in/azamat-apsamatov-b1b097a9" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><strong>Azamat Apsamatov</strong><span>Network Engineer · Cleveland, Ohio</span></div>
+      <a href="#top">Back to top ↑</a>
+      <span>© <span id="year"></span></span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
